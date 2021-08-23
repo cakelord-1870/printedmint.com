@@ -1,0 +1,51 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+/**
+* Custom js goes here.
+*/
+
+
+//Function that scans the page for all the forms and prevents from multiple submits
+//Busy status resets after 3 seconds.
+$(document).ready(function() {
+    $("form").each(function(index, form){
+        var oldSubmit = form.submit;
+        var busy = false;
+        form.submit = function(){
+            if(!busy) {
+                busy = true;
+                setTimeout(function() {
+                                    busy=false;
+                                    $(form).removeClass("busy");
+                                },7000);
+                $(form).addClass("busy")
+                oldSubmit.apply(this,arguments);
+            };
+        }
+    })
+});
+
+//Function that validates form (id of form is first parameter) when the button (id of button is second parameter) is clicked
+(function ( $ ) {
+    $.fn.onMouseClickListener = function(formId, buttonId) {
+        $('#' + buttonId).click(function() {
+            var validator = $('#' + formId).data('bootstrapValidator');
+            validator.validate();
+        });
+    };
+}( jQuery ));
+
+//Function that validates form (id of form is first parameter)
+//when the ENTER (id of inputText upon which the key is pressed is second parameter) is pressed
+(function ( $ ) {
+    $.fn.onEnterPressListener = function(formId, inputTextId) {
+		$('#' + inputTextId).keypress(function (e) {
+		 var key = e.which;
+		 //Check weather the pressed key is ENTER
+		 if(key == 13){
+			var validator = $('#' + formId).data('bootstrapValidator');
+			validator.validate();
+		  }
+		});
+    };
+}( jQuery ));

@@ -1,0 +1,32 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+$(document).ready(function() {
+    $('.bo-price').each(function(index, element) {
+    	var optionId = index + 1;
+    	var initDurationValue = $('.dc-' + optionId+ ' option:selected').data('price');
+    	var initCostUnitValue = $('.dc-' + optionId + ' option:selected').data('text');
+
+    	if (initDurationValue != null && initCostUnitValue != null) {
+    	    $('#bdp-pack-' + optionId + ' span.bo-cost').html(initDurationValue);
+    	    $('#bdp-pack-' + optionId + ' span.bo-price-unit').html(initCostUnitValue);
+    	}
+    });
+
+    //when the duration changes, it will replace the html values.
+    $('select').change(function() {
+
+    	var dropID = $(this).attr('id');
+    	var billingOptionId = dropID.replace('drop-choice-', '');
+    	var durationValue = $('#' + dropID + ' option:selected').data('price'); //getting the price of selected element
+    	var costUnitValue = $('#' + dropID + ' option:selected').data('text'); //getting the unit for the selected element
+
+    	var className = $(this).attr('class').split(' ')[1]; //getting option class which indicated option number
+    	var bdpNum = className[className.length - 1]; //getting option number
+    	//insert new price and label to correct tags.
+    	if (durationValue != null && costUnitValue != null) {
+    	    $('#bdp-pack-' + billingOptionId + ' span.bo-cost').html(durationValue);
+    	    $('#bdp-pack-' + billingOptionId + ' span.bo-price-unit').html(costUnitValue);
+    	}
+    });
+
+});

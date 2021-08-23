@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internet Access</title>
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-ltr.min.css">
+    <link rel="stylesheet" href="../css/bootstrapValidator.css">
+    <link rel="stylesheet" href="../css/intlTelInput.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lte IE 8]>
+    <script src="/rwd/js/html5shiv.min.js"></script>
+    <script src="/rwd/js/respond.js"></script>
+    <script src="/rwd/js/jquery/jquery-1.9.1.js"></script>
+    <![endif]-->
+    <!-- Changing script order will break functionality -->
+    <!--[if (gt IE 8)|!(IE)]>-->
+    <script src="../../js/jquery/jquery-2.1.1.js.html"></script>
+    <!--<![endif]-->
+    <script type="text/javascript" src="../../js/bootstrap.min.js.html"></script>
+    <script src="../../js/jquery/jquery-ui.js.html"></script>
+    <!--<script src="/rwd/js/bootstrap/modal.js"></script>-->
+    <script src="../../js/bootstrap/alert.js.html"></script>
+    <script src="../../js/placeholders.jquery.js.html"></script>
+    <script src="../../js/custom.js.html"></script>
+    <script type="text/javascript" src="../../js/bootstrapValidator.min.js.html"></script>
+    <link rel="stylesheet" href="../css/style-ltr-2-1.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <script>
+        $(document).ready(function () {
+            // Prevent Bootstrap from caching help modal content
+            $('#help-modal').on('hidden.bs.modal', function () {
+                $(this).removeData('bs.modal');
+            });
+        });
+    </script>
+</head>
+<body id="start-page" class="no-flexbox">
+<div class="page-wrap">
+    <!--// note: this header was modified by DREW to add the area for the mobile menu button\\-->
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container header-container">
+            <div class="col-xs-6 col-sm-6 col-md-6 header-left-side">
+                <div class="navbar-logo"></div>
+            </div>
+
+            <div class="col-xs-0 col-sm-6 col-md-6 header-right-side">
+                <div class="header-hotel-name">Fairmont Royal York</div>
+                <div class="header-hotel-address">100 Front Street W, Toronto, ON, Canada</div>
+            </div>
+
+            <div class="col-xs-6 col-sm-0 col-md-0 header-right-side-button">
+    <div class='mobile-button'><a style="" id="xbaseexpand" onclick="togglemenu()"
+                                  class="btn btn-lg btn-altblack pull-right" href="#" role="button"><i
+            class="fa fa-bars"></i></a>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+
+    <Script>
+	function togglemenu() {
+	$("#mobilemenu").slideToggle();
+	}
+
+</script>
+
+<!--//
+
+must have 2 divs. one being visible-xs for bootstrap hide/show
+                the other must have id=mobilemenu
+
+must have one or more unordered lists <ul>
+        must have one or more list items per list <li>
+        each list should conatin either a div or an a tag.
+            the div it to create abolder/bigger header, ei Free Websites
+            the a will contain the actual links
+    may contain hr tags between or after ul to create a divider line.
+
+\\ -->
+
+<div class='visible-xs visible-sm'>
+    <div id=mobilemenu>
+
+        <ul class="mobile-options">
+            <!--<li>-->
+                <!--<div>OPTIONS</div>-->
+            <!--</li>-->
+            <li><a id="tos-modal-link-mobile" href="#" data-toggle="modal" data-target="#tos-modal"
+                   class="footer-links-left tos-privacy">Terms of Service</a></li>
+            <li><a id="pp-modal-link-mobile" href="#" data-toggle="modal" data-target="#privacy-modal"
+                   class="footer-links-right tos-privacy">Privacy Statement</a></li>
+            <li class="hidden"><a id="freesites-modal-link-mobile" href="#" data-toggle="modal"
+                                                data-target="#freesites-modal"
+                                                class="footer-links-right tos-privacy">Free Websites</a>
+            </li>
+            <li><a id="help-modal-link-mobile" href="#" data-toggle="modal" data-target="#help-modal"><img
+                    class="help-icon"
+                    src="help-icon.png" alt="Help"> <span
+                    class="footer-left-spacing">Help</span> </a></li>
+        </ul>
+        <HR>
+        <div >
+            <ul class="mobile-lang">
+                <!--<li>-->
+                    <!--<div>LANGUAGES</div>-->
+                <!--</li>-->
+                <li><a href='../../Start%EF%B9%96lang=english.html'>English</a></li><li class='last'><a href='../../Start%EF%B9%96lang=french.html'>Français</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+    <div class="container login-container">
+        <div class="background background-initial-login-page">
+    <div class="internet-access-label">
+        <h1>Meeting Room Internet Access</h1>
+
+        <div class="custom-message"></div>
+    </div>
+
+
+    <div class="spcontainer">
+            <!-- PASSCODE INPUT TEMPLATE START -->
+<div class="sp-width lo-pc">
+    <div class="lo">
+        <form action="../../Start.html" method="POST" id="passcodeForm" autocomplete="off">
+            <div class="sp-row sp-header">Passcode Access</div>
+            <div class="sp">
+                <div class="row lo-desc-row">
+                    <div class="lo-desc">
+                        Please enter your internet passcode here.
+                    </div>
+                </div>
+                <div class="row startpage-input-row sp-stat-height-row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 sp-input-group">
+                        <div class="form-group">
+                          <label for="passcode-input">Passcode</label>
+                            <input id="passcode-input" type="text" class="startpage-fields-textfields" name="passcode">
+                        </div>
+                    </div>
+                </div>
+                <script>
+	$(document).ready(function() {
+
+		var submitlink = document.getElementById('passcodeForm-submit');
+
+		if (submitlink.addEventListener) {
+			submitlink.addEventListener('click', function() {
+				$('#'+'passcodeForm').data('bootstrapValidator').validate();
+			}, false);
+		} else {
+			submitlink.attachEvent('onclick', function() {
+				var validator = $('#'+'passcodeForm').data('bootstrapValidator');
+				validator.validate();
+			}, false);
+		}
+	});
+</script>
+
+                <div class="row remember-device-row">
+                    <div class="col-xs-1 col-sm-1 col-md-1"></div>
+                    <div class="col-xs-10 col-sm-10 col-md-10">
+                        
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1"></div>
+                </div>
+                <a href="#!" id='passcodeForm-submit'>
+                    <div class="sp-row sp-select-btn">CONNECT</div>
+                </a>
+            </div>
+            <input type="hidden" name="sid" value="REOREE3P5HUW">
+        </form>
+    </div>
+    <script type="text/javascript">
+$(document).ready(function() {
+$('#passcodeForm')
+    .bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            activeToSCheckbox: {
+validators: {
+notEmpty: {
+message: "You must agree to the Terms of Service to use this system"
+}
+}
+},
+passcode: {
+validators: {
+notEmpty: {
+message: "Please enter a passcode"
+}
+}
+},
+
+        }
+    })
+	.on('success.form.bv', function(e) {
+        this.submit(); //start replace
+    }); //end of .on
+});
+</script>
+
+</div>
+
+<!-- PASSCODE INPUT TEMPLATE END -->
+<script>
+$(window).bind('resize load', function() {
+        if ($(this).width() > 768) {
+            $('.lo-desc').height("auto");
+            var descElementHeights = $('.lo-desc').map(function () {
+                return $(this).height();
+            }).get();
+
+            var maxHeightDesc = Math.max.apply(null, descElementHeights);
+
+            var midElementHeights = $('.sp-input-group').map(function () {
+                return $(this).height();
+            }).get();
+
+            var maxHeightMid = Math.max.apply(null, midElementHeights);
+
+            $('.spcontainer').children().each(function () {
+                //set elements with the following classes to the max height.
+                $(this).find('.lo-desc').height(maxHeightDesc);
+                if ($('#smsAuthVerForm-submit').length > 0 && $('.tos-active.has-feedback').length > 0) {
+                    $(this).find('.sp-input-group').has('form').height(maxHeightMid);
+                    $(this).find('form .sp-input-group').height(maxHeightMid - $('.tos-active.has-feedback').outerHeight(true));
+                } else {
+                    $(this).find('.sp-input-group').height(maxHeightMid);
+                }
+            });
+        }
+});
+
+    $(document).ready(function () {
+        var text1 = ($('#start-page .internet-access-label h1').text()).trim();
+        var text2 = ($('#start-page .internet-access-label .custom-message').text()).trim();
+
+
+        if (text1 == '') {
+            $('#start-page .internet-access-label h1').css({ 'display': 'none' });
+        }
+        else {
+            $('#start-page .internet-access-label h1').css({ 'display': 'block' });
+        }
+        if (text2 == '') {
+            $('#start-page .internet-access-label .custom-message').css({ 'display': 'none' });
+        }
+        else {
+            $('#start-page .internet-access-label .custom-message').css({ 'display': 'block' });
+        }
+    });
+</script>
+
+    </div>
+    <div class="row last-fields">
+
+        <div class="col-xs-1 col-sm-1 col-md-1"></div>
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="profile-description-2"></div>
+        </div>
+
+        <div class="col-xs-1 col-sm-1 col-md-1"></div>
+
+    </div>
+
+</div>
+
+<script src="../../js/billing-package.js.html"></script>
+
+
+
+
+    </div>
+    <div class="row last-fields tos-row">
+
+        <div class="col-xs-1 col-sm-1 col-md-1"></div>
+        <div class="col-xs-10 col-sm-10 col-md-10">
+
+            <div class="agree-tos">
+                By using this system, you agree to the <a id="tos-modal-link" href="#" data-toggle="modal" data-target="#tos-modal" class="">Terms of Service.</a>
+            </div>
+
+        </div>
+
+        <div class="col-xs-1 col-sm-1 col-md-1"></div>
+
+    </div>
+
+    
+</div>
+<div class="footer">
+    <div class="agree-tos-footer" >
+        <p>By using this system, you agree to the <a id="tos-modal-link" href="#" data-toggle="modal" data-target="#tos-modal" class="">Terms of Service.</a></p>
+    </div>
+    <div class="container footer-container">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <ul class="left-footer-links">
+                <li><a id="help-modal-link" href="#!" data-toggle="modal" data-target="#help-modal"><img
+                        class="help-icon"
+                        src="help-icon-2-1.png" alt="Help"> <span
+                        class="footer-left-spacing">Help</span> </a></li>
+                <li class="hidden"><a href="#printing-url%23" target="_blank"><img class="printer-icon"
+                                                                                             src="printer-icon.png"
+                                                                                             alt="Printing">
+                    <span
+                            class="footer-left-spacing">Printing</span> </a></li>
+            </ul>
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4 footer-links-both">
+            <ul class="tos-privacy-list">
+                <li class="#tos-li-class#"><a id="tos-modal-link" href="#!" data-toggle="modal"
+                                              data-target="#tos-modal"
+                                              class="footer-links-left tos-privacy">Terms of Service</a>
+                </li>
+                <li><a id="pp-modal-link" href="#!" data-toggle="modal" data-target="#privacy-modal"
+                       class="footer-links-right tos-privacy">Privacy Statement</a></li>
+                <li class="hidden"><a id="freesites-modal-link" href="#!" data-toggle="modal"
+                                                    data-target="#freesites-modal"
+                                                    class="footer-links-right tos-privacy">Free Websites</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4 ">
+
+            <div class="btn-group language-btn-position dropup ">
+                <button type="button" id="language-button"
+                        class="btn btn-default dropdown-toggle language-btn visible-md visible-lg btn-lg "
+                        data-toggle="dropdown" data-target="" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                </button>
+
+                <ul class="language-options dropdown-menu" role="menu" aria-labelledby="language-button">
+                    <li><a href='../../Start%EF%B9%96lang=english.html'>English</a></li><li class='last'><a href='../../Start%EF%B9%96lang=french.html'>Français</a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group language-btn-position normal-list ">
+                <ul class="language-options visible-md visible-lg lang-opt-list" role="menu">
+                    <li><a href='../../Start%EF%B9%96lang=english.html'>English</a></li><li class='last'><a href='../../Start%EF%B9%96lang=french.html'>Français</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<div class="modal fade" id="help-modal" data-remote="/rwd/modal/HelpModal?lang=english" tabindex="-1"
+     role="dialog"
+     aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tos-modal" data-remote="/rwd/modal/TOSModal?lang=english" tabindex="-1" role="dialog"
+     aria-labelledby="tosModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="privacy-modal" data-remote="/rwd/modal/PrivacyModal?lang=english" tabindex="-1"
+     role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="freesites-modal" data-remote="/rwd/modal/FreesitesModal?lang=english" tabindex="-1"
+     role="dialog" aria-labelledby="freesitesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<!-- leave blank for automation -->
+<div class="footer2"></div>
+</body>
+</html>
+
+<script>
+ $( document ).ready(function() {
+     /* If there are 4 or more languages, it will utilize the drop up options. If there are 3 or less then it will display as a list. */
+     var langSize = $( ".dropup ul.language-options li" ).length;
+     if (langSize >= 4){
+	 $("div.dropup").show();
+	 $("div.normal-list").hide();
+     }
+     else {
+	 $("div.dropup").hide();
+	 $("div.normal-list").show();
+     }
+
+     // determing the number of containers for the page
+     var numContainers = $(".spcontainer > .sp-width, .sp-container > .bdp-width, .bdp-row > .bdp-width").length;
+     $(".spcontainer, .bdp-row").addClass("container-" + numContainers);
+ });
+
+
+</script>
+<script>document.testReady = true</script>
